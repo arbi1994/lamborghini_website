@@ -1,0 +1,30 @@
+/* Variables */
+$cover-color: black;
+
+/* functions */
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+===========
+Global styling
+===========
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  body {
+    overflow: hidden;
+  }
+}
+
+/* Imports */
+
+@import "cover";
+@import "home";

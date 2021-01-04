@@ -1,0 +1,27 @@
+header {
+  background: black;
+  padding: 1rem 2rem; }
+  header nav {
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh; }
+    header nav .logo {
+      flex: 1 1 40rem;
+      border: 1px solid red;
+      margin: 0 1rem;
+      font-size: 3rem; }
+    header nav ul {
+      list-style: none;
+      flex: 1 1 40rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      header nav ul li {
+        border: 1px solid blue; }
+        header nav ul li a {
+          text-decoration: none;
+          color: black; }
+    header nav h1 {
+      font-size: 1rem; }
