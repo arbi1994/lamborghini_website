@@ -1,5 +1,4 @@
 .home {
-  min-height: 100vh;
   background: orange;
   color: #312846; }
 
@@ -12,8 +11,7 @@ header {
     background: black;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    min-height: 10vh; }
+    align-items: center; }
     header nav .logo {
       flex: 1 1 40rem;
       margin: 0 0rem;
@@ -25,7 +23,7 @@ header {
       header nav .logo .logo-name {
         margin-left: 2rem; }
       header nav .logo .logo-img {
-        transform: translate(-50%, 0%); }
+        transform: translateX(-25%); }
         header nav .logo .logo-img img {
           width: 180px;
           height: 200px; }
@@ -38,6 +36,11 @@ header {
       header nav ul li a {
         text-decoration: none;
         color: white;
-        font-size: 1.6rem; }
+        font-size: 2.4rem; }
     header nav h1 {
       font-size: 1rem; }
+
+.main {
+  min-height: 70vh;
+  background-color: black;
+  border: 1px solid white; }

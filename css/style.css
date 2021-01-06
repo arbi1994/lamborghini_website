@@ -10,13 +10,17 @@ Global styling
   padding: 0;
   box-sizing: border-box; }
   * body {
-    overflow: hidden; }
+    overflow-x: hidden;
+    font-family: "Open Sans", sans-serif; }
+
+html {
+  font-size: 62.5%; }
 
 /* Imports */
 .cover {
   min-height: 100vh;
   width: 100%;
-  background: yellow;
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,14 +28,57 @@ Global styling
   top: 0;
   left: 0;
   z-index: 2;
-  animation: toRight 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) forwards 1s; }
+  animation: toRight 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) forwards 3s; }
+
+.logo #bull #logo {
+  fill-opacity: 0;
+  animation: fillColor 0.3s linear forwards 2s; }
+  .logo #bull #logo path:nth-child(1) {
+    stroke-dasharray: 771;
+    stroke-dashoffset: 771;
+    animation: draw 2s ease forwards; }
+  .logo #bull #logo path:nth-child(2) {
+    stroke-dasharray: 266;
+    stroke-dashoffset: 266;
+    animation: draw 2s ease forwards; }
+  .logo #bull #logo path:nth-child(3) {
+    stroke-dasharray: 1268;
+    stroke-dashoffset: 1268;
+    animation: draw 2s ease forwards; }
+  .logo #bull #logo path:nth-child(4) {
+    stroke-dasharray: 55;
+    stroke-dashoffset: 55;
+    animation: draw 2s ease forwards; }
+  .logo #bull #logo path:nth-child(5) {
+    stroke-dasharray: 470;
+    stroke-dashoffset: 470;
+    animation: draw 2s ease forwards; }
+  .logo #bull #logo path:nth-child(6) {
+    stroke-dasharray: 193;
+    stroke-dashoffset: 193;
+    animation: draw 2s ease forwards; }
 
 @keyframes toRight {
   to {
     left: 100%; } }
 
+@keyframes fillColor {
+  0% {
+    fill-opacity: 1; }
+  50% {
+    fill-opacity: 0; }
+  100% {
+    fill-opacity: 1; } }
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; } }
+
+@keyframes moveRight {
+  to {
+    left: 50%; } }
+
 .home {
-  min-height: 100vh;
   background: orange;
   color: #312846; }
 
@@ -44,8 +91,7 @@ header {
     background: black;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    min-height: 10vh; }
+    align-items: center; }
     header nav .logo {
       flex: 1 1 40rem;
       margin: 0 0rem;
@@ -57,7 +103,7 @@ header {
       header nav .logo .logo-name {
         margin-left: 2rem; }
       header nav .logo .logo-img {
-        transform: translate(-50%, 0%); }
+        transform: translateX(-25%); }
         header nav .logo .logo-img img {
           width: 180px;
           height: 200px; }
@@ -70,6 +116,11 @@ header {
       header nav ul li a {
         text-decoration: none;
         color: white;
-        font-size: 1.6rem; }
+        font-size: 2.4rem; }
     header nav h1 {
       font-size: 1rem; }
+
+.main {
+  min-height: 70vh;
+  background-color: black;
+  border: 1px solid white; }
