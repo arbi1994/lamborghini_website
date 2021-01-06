@@ -35,30 +35,41 @@ Global styling
   background: orange;
   color: #312846; }
 
+/* Variables */
 header {
   background: black;
-  padding: 1rem 2rem; }
+  padding: 1rem 2rem;
+  position: relative; }
   header nav {
-    background: whitesmoke;
+    background: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 10vh; }
     header nav .logo {
       flex: 1 1 40rem;
-      border: 1px solid red;
-      margin: 0 1rem;
-      font-size: 3rem; }
+      margin: 0 0rem;
+      font-size: 3rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      justify-content: space-between; }
+      header nav .logo .logo-name {
+        margin-left: 2rem; }
+      header nav .logo .logo-img {
+        transform: translate(-50%, 0%); }
+        header nav .logo .logo-img img {
+          width: 180px;
+          height: 200px; }
     header nav ul {
       list-style: none;
-      flex: 1 1 40rem;
+      flex: 1 1 20rem;
       display: flex;
       justify-content: space-around;
       align-items: center; }
-      header nav ul li {
-        border: 1px solid blue; }
-        header nav ul li a {
-          text-decoration: none;
-          color: black; }
+      header nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.6rem; }
     header nav h1 {
       font-size: 1rem; }
