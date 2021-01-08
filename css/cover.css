@@ -11,33 +11,39 @@
   z-index: 2;
   animation: toRight 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) forwards 3s; }
 
-.logo #bull #logo {
-  fill-opacity: 0;
-  animation: fillColor 0.3s linear forwards 2s; }
-  .logo #bull #logo path:nth-child(1) {
-    stroke-dasharray: 771;
-    stroke-dashoffset: 771;
-    animation: draw 2s ease forwards; }
-  .logo #bull #logo path:nth-child(2) {
-    stroke-dasharray: 266;
-    stroke-dashoffset: 266;
-    animation: draw 2s ease forwards; }
-  .logo #bull #logo path:nth-child(3) {
-    stroke-dasharray: 1268;
-    stroke-dashoffset: 1268;
-    animation: draw 2s ease forwards; }
-  .logo #bull #logo path:nth-child(4) {
-    stroke-dasharray: 55;
-    stroke-dashoffset: 55;
-    animation: draw 2s ease forwards; }
-  .logo #bull #logo path:nth-child(5) {
-    stroke-dasharray: 470;
-    stroke-dashoffset: 470;
-    animation: draw 2s ease forwards; }
-  .logo #bull #logo path:nth-child(6) {
-    stroke-dasharray: 193;
-    stroke-dashoffset: 193;
-    animation: draw 2s ease forwards; }
+.logo #bull {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  transform: translate(-50%, -50%);
+  animation: moveRight 1s ease forwards; }
+  .logo #bull #logo {
+    fill-opacity: 0;
+    animation: fillColor 0.3s linear forwards 2s; }
+    .logo #bull #logo path:nth-child(1) {
+      stroke-dasharray: 771;
+      stroke-dashoffset: 771;
+      animation: draw 2s ease forwards; }
+    .logo #bull #logo path:nth-child(2) {
+      stroke-dasharray: 266;
+      stroke-dashoffset: 266;
+      animation: draw 2s ease forwards; }
+    .logo #bull #logo path:nth-child(3) {
+      stroke-dasharray: 1268;
+      stroke-dashoffset: 1268;
+      animation: draw 2s ease forwards; }
+    .logo #bull #logo path:nth-child(4) {
+      stroke-dasharray: 55;
+      stroke-dashoffset: 55;
+      animation: draw 2s ease forwards; }
+    .logo #bull #logo path:nth-child(5) {
+      stroke-dasharray: 470;
+      stroke-dashoffset: 470;
+      animation: draw 2s ease forwards; }
+    .logo #bull #logo path:nth-child(6) {
+      stroke-dasharray: 193;
+      stroke-dashoffset: 193;
+      animation: draw 2s ease forwards; }
 
 @keyframes toRight {
   to {

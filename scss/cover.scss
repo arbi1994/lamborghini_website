@@ -18,11 +18,11 @@
 
 .logo {
   #bull {
-    // position: absolute;
-    // top: 50%;
-    // left: -10%;
-    // transform: translate(-50%, -50%);
-    // animation: moveRight 1s ease forwards;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    animation: moveRight 1s ease forwards;
     #logo {
       fill-opacity: 0;
       animation: fillColor 0.3s linear forwards 2s;
