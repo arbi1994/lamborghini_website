@@ -9,7 +9,8 @@
   top: 0;
   left: 0;
   z-index: 2;
-  animation: toRight 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) forwards 3s; }
+  clip-path: circle(100%);
+  animation: fadeOutCircle 0.5s ease forwards 3s; }
 
 .logo #bull {
   position: absolute;
@@ -48,6 +49,10 @@
 @keyframes toRight {
   to {
     left: 100%; } }
+
+@keyframes fadeOutCircle {
+  to {
+    clip-path: circle(0% at 48% 10%); } }
 
 @keyframes fillColor {
   0% {

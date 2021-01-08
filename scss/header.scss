@@ -9,43 +9,61 @@ $nav-color: black;
 
 header {
   background: $nav-color;
-  padding: 1rem 2rem;
-  position: relative;
+  padding: 2rem 5rem;
   nav {
+    min-height: 10vh;
     background: $nav-color;
     @include flex();
     .logo {
-      flex: 1 1 40rem;
-      margin: 0 0rem;
-      font-size: 3rem;
+      flex: 0 0 50rem;
       @include flex;
       justify-content: space-between;
-      .logo-name {
-        margin-left: 2rem;
-      }
       .logo-img {
-        transform: translateX(-25%);
+        transform: translateX(-50%);
+        animation: breatheEffect 3s ease-in-out alternate infinite 3s;
+        z-index: 1;
         img {
-          width: 180px;
-          height: 200px;
+          object-fit: contain;
+          width: 80px;
+          height: 80px;
         }
       }
     }
 
     ul {
       list-style: none;
-      flex: 1 1 20rem;
+      flex: 0 0 50rem;
       @include flex();
       li {
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0);
+        &:hover span {
+          width: 100%;
+        }
         a {
           text-decoration: none;
           color: white;
-          font-size: 2.4rem;
+          font-size: 1.8rem;
         }
       }
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background: white;
+        transition: 0.2s ease-in-out;
+      }
     }
-    h1 {
-      font-size: 1rem;
-    }
+  }
+}
+
+@keyframes breatheEffect {
+  from {
+    filter: drop-shadow(0 0 0 #ec9c00);
+  }
+  to {
+    filter: drop-shadow(0 0 10px #ec9c00);
   }
 }
