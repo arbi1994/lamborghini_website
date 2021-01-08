@@ -52,7 +52,7 @@
 
 @keyframes fadeOutCircle {
   to {
-    clip-path: circle(0% at 48% 10%); } }
+    clip-path: circle(0% at 50% 50%); } }
 
 @keyframes fillColor {
   0% {
