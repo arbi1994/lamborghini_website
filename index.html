@@ -9,8 +9,8 @@
       rel="stylesheet"
     />
     <link
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
       rel="stylesheet"
-      href="node_modules/@splidejs/splide/dist/css/splide.min.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Lamborghini website</title>
@@ -62,7 +62,6 @@
           <div class="logo">
             <div class="logo-name">
               <svg
-             
                 viewBox="-.576 -.143 661.316 155.251"
                 width="300"
                 xmlns="http://www.w3.org/2000/svg"
@@ -89,13 +88,44 @@
           </ul>
         </nav>
       </header>
-      <section class="main">
-        <div class="slider">
-          <div>your content</div>
-          <div>your content</div>
-          <div>your content</div>
+
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <h2>Lamborghini aventador</h2>
+            <img
+              data-src="./images/lambo_aventador.jpg"
+              alt=""
+              class="swiper-lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <h2>Lamborghini urus</h2>
+            <img
+              data-src="./images/lambo_urus.webp"
+              alt=""
+              class="swiper-lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <h2>Lamborghini terzo millenio</h2>
+            <img
+              data-src="./images/lambo_terzo_millenio.jpg"
+              alt=""
+              class="swiper-lazy"
+            />
+          </div>
         </div>
-      </section>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination">
+          <div class="line"></div>
+        </div>
+        <!-- If we need navigation buttons -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+      </div>
     </div>
     <script type="module" src="./index.js"></script>
   </body>
