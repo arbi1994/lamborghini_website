@@ -1,0 +1,140 @@
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.vehicles {
+  min-height: 100vh;
+  @include flex();
+  .content {
+    border: 1px solid black;
+    height: calc(100vh - 5rem);
+    width: 80%;
+    @include flex();
+    position: relative;
+    .card {
+      height: 50rem;
+      width: 30rem;
+      cursor: pointer;
+      overflow: hidden;
+    //   border: 1px solid red;
+      border-radius: 1rem;
+      animation: scaleDown 0.1s linear forwards;
+      position: relative;
+      .description-window {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        transition: 0.5s ease-in-out;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        @include flex();
+        justify-content: space-around;
+        h1 {
+          font-size: 3rem;
+          flex: 0.5;
+        }
+        p {
+          font-size: 1.8rem;
+          flex: 1;
+        }
+        h2 {
+          flex: 1;
+          a {
+            text-decoration: none;
+            color: #ec9c00;
+            text-transform: uppercase;
+            font-size: 2rem;
+            padding: 1rem;
+            &:hover {
+              color: #ffbf40;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        // animation: zoomOut 0.3s linear forwards;
+        &:hover {
+          //   animation: zoomIn 0.3s linear forwards 1s;
+        }
+      }
+      &:hover {
+        animation: scaleUp 0.1s linear forwards;
+        .description-window {
+          top: 0%;
+        }
+      }
+    }
+    .popup.active {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 1);
+      z-index: 3;
+    }
+    .popup.active::after{
+        content: "X";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: black;
+        color: white;
+        font-size: 5rem;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        // border: 1px solid white;
+        z-index: 3;
+    }
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+@keyframes zoomOut {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+@keyframes scaleDown {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes moveUp {
+  to {
+    top: 50%;
+  }
+}

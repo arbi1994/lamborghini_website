@@ -6,6 +6,8 @@
 
 import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
 
+/* hero section slideshow */
+
 const mySwiper = new Swiper('.swiper-container', {
     speed: 1000,
     effect: 'fade',
@@ -30,7 +32,33 @@ const mySwiper = new Swiper('.swiper-container', {
 });
 
 
+/* Popup window */
 
+const checkLink = document.querySelector(".description-window h2 a");
+const popup = document.querySelector(".popup");
+
+
+checkLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  popupWindow(popup);
+});
+
+popup.addEventListener("click", (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+ 
+  if(x >= 1295 || x <= 1365 && y >= 115 || y <= 28){
+    pupupWindowClose(popup);
+  }
+})
+
+function popupWindow(window){
+  window.classList.add("active");
+}
+
+function pupupWindowClose(window){
+  window.classList.remove("active");
+}
 
 
 

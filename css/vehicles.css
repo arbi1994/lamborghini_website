@@ -1,0 +1,112 @@
+.vehicles {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .vehicles .content {
+    border: 1px solid black;
+    height: calc(100vh - 5rem);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; }
+    .vehicles .content .card {
+      height: 50rem;
+      width: 30rem;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 1rem;
+      animation: scaleDown 0.1s linear forwards;
+      position: relative; }
+      .vehicles .content .card .description-window {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        transition: 0.5s ease-in-out;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around; }
+        .vehicles .content .card .description-window h1 {
+          font-size: 3rem;
+          flex: 0.5; }
+        .vehicles .content .card .description-window p {
+          font-size: 1.8rem;
+          flex: 1; }
+        .vehicles .content .card .description-window h2 {
+          flex: 1; }
+          .vehicles .content .card .description-window h2 a {
+            text-decoration: none;
+            color: #ec9c00;
+            text-transform: uppercase;
+            font-size: 2rem;
+            padding: 1rem; }
+            .vehicles .content .card .description-window h2 a:hover {
+              color: #ffbf40;
+              text-decoration: underline; }
+      .vehicles .content .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+      .vehicles .content .card:hover {
+        animation: scaleUp 0.1s linear forwards; }
+        .vehicles .content .card:hover .description-window {
+          top: 0%; }
+    .vehicles .content .popup.active {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: black;
+      z-index: 3; }
+    .vehicles .content .popup.active::after {
+      content: "X";
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: black;
+      color: white;
+      font-size: 5rem;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      z-index: 3; }
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(1.2); } }
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1.2); }
+  to {
+    transform: scale(1); } }
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(1.2); } }
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1.2); }
+  to {
+    transform: scale(1); } }
+
+@keyframes moveUp {
+  to {
+    top: 50%; } }
