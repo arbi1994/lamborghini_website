@@ -34,13 +34,14 @@ const mySwiper = new Swiper('.swiper-container', {
 
 /* Popup window */
 
-const checkLink = document.querySelector(".description-window h2 a");
+const checkLink = document.querySelectorAll(".description-window h2 a");
 const popup = document.querySelector(".popup");
 
-
-checkLink.addEventListener("click", (e) => {
-  e.preventDefault();
-  popupWindow(popup);
+checkLink.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    popupWindow(popup);
+  });
 });
 
 popup.addEventListener("click", (e) => {
@@ -59,7 +60,3 @@ function popupWindow(window){
 function pupupWindowClose(window){
   window.classList.remove("active");
 }
-
-
-
-

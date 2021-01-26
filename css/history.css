@@ -2,8 +2,7 @@
   min-height: 100vh; }
   .history .first-paragraph {
     min-height: 100vh;
-    position: relative;
-    border: 1px solid black; }
+    position: relative; }
     .history .first-paragraph .title {
       font-size: 4rem;
       color: black;

@@ -7,21 +7,32 @@
 
 .vehicles {
   min-height: 100vh;
+  margin: 3rem 0;
   @include flex();
+  .next {
+    border: none;
+    padding: 1rem 3rem;
+    background: rgb(176, 176, 221);
+    font-size: 2rem;
+    cursor: pointer;
+  }
   .content {
     border: 1px solid black;
-    height: calc(100vh - 5rem);
     width: 80%;
+    padding: 1rem;
     @include flex();
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     position: relative;
     .card {
-      height: 50rem;
+      margin: 3rem 2rem;
+      height: 40rem;
       width: 30rem;
       cursor: pointer;
-      overflow: hidden;
-    //   border: 1px solid red;
       border-radius: 1rem;
       animation: scaleDown 0.1s linear forwards;
+      overflow: hidden;
       position: relative;
       .description-window {
         position: absolute;
@@ -29,7 +40,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.7);
         z-index: 2;
         transition: 0.5s ease-in-out;
         color: white;
@@ -39,14 +50,18 @@
         justify-content: space-around;
         h1 {
           font-size: 3rem;
-          flex: 0.5;
+          flex: 0.8;
+        }
+        h6 {
+          font-size: 1.4rem;
+          margin-bottom: 3rem;
         }
         p {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           flex: 1;
         }
         h2 {
-          flex: 1;
+          flex: 0.5;
           a {
             text-decoration: none;
             color: #ec9c00;
@@ -76,28 +91,31 @@
         }
       }
     }
-    .popup.active {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 1);
-      z-index: 3;
-    }
-    .popup.active::after{
-        content: "X";
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: black;
-        color: white;
-        font-size: 5rem;
-        padding: 1rem 2rem;
-        cursor: pointer;
-        // border: 1px solid white;
-        z-index: 3;
-    }
+  }
+  .popup {
+    display: none;
+  }
+  .popup.active {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 1);
+    z-index: 3;
+  }
+  .popup.active::after {
+    content: "X";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: black;
+    color: white;
+    font-size: 5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    z-index: 3;
   }
 }
 

@@ -230,8 +230,7 @@ header {
   min-height: 100vh; }
   .history .first-paragraph {
     min-height: 100vh;
-    position: relative;
-    border: 1px solid black; }
+    position: relative; }
     .history .first-paragraph .title {
       font-size: 4rem;
       color: black;
@@ -325,26 +324,37 @@ header {
 
 .vehicles {
   min-height: 100vh;
+  margin: 3rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; }
+  .vehicles .next {
+    border: none;
+    padding: 1rem 3rem;
+    background: #b0b0dd;
+    font-size: 2rem;
+    cursor: pointer; }
   .vehicles .content {
     border: 1px solid black;
-    height: calc(100vh - 5rem);
     width: 80%;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     position: relative; }
     .vehicles .content .card {
-      height: 50rem;
+      margin: 3rem 2rem;
+      height: 40rem;
       width: 30rem;
       cursor: pointer;
-      overflow: hidden;
       border-radius: 1rem;
       animation: scaleDown 0.1s linear forwards;
+      overflow: hidden;
       position: relative; }
       .vehicles .content .card .description-window {
         position: absolute;
@@ -352,7 +362,7 @@ header {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.7);
         z-index: 2;
         transition: 0.5s ease-in-out;
         color: white;
@@ -365,12 +375,15 @@ header {
         justify-content: space-around; }
         .vehicles .content .card .description-window h1 {
           font-size: 3rem;
-          flex: 0.5; }
+          flex: 0.8; }
+        .vehicles .content .card .description-window h6 {
+          font-size: 1.4rem;
+          margin-bottom: 3rem; }
         .vehicles .content .card .description-window p {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           flex: 1; }
         .vehicles .content .card .description-window h2 {
-          flex: 1; }
+          flex: 0.5; }
           .vehicles .content .card .description-window h2 a {
             text-decoration: none;
             color: #ec9c00;
@@ -388,25 +401,28 @@ header {
         animation: scaleUp 0.1s linear forwards; }
         .vehicles .content .card:hover .description-window {
           top: 0%; }
-    .vehicles .content .popup.active {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: black;
-      z-index: 3; }
-    .vehicles .content .popup.active::after {
-      content: "X";
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: black;
-      color: white;
-      font-size: 5rem;
-      padding: 1rem 2rem;
-      cursor: pointer;
-      z-index: 3; }
+  .vehicles .popup {
+    display: none; }
+  .vehicles .popup.active {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    z-index: 3; }
+  .vehicles .popup.active::after {
+    content: "X";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: black;
+    color: white;
+    font-size: 5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    z-index: 3; }
 
 @keyframes zoomIn {
   from {
@@ -435,3 +451,70 @@ header {
 @keyframes moveUp {
   to {
     top: 50%; } }
+
+.footer {
+  min-height: 20vh;
+  background: black;
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .footer .footer-wrapper {
+    width: 100%;
+    display: flex; }
+  .footer ul {
+    display: flex;
+    align-items: center;
+    list-style: none; }
+    .footer ul li {
+      text-align: center;
+      margin-left: 2rem;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0); }
+      .footer ul li:hover span {
+        width: 100%; }
+      .footer ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.8rem; }
+        .footer ul li a .fab {
+          padding: 1rem;
+          font-size: 20px;
+          color: white; }
+          .footer ul li a .fab:hover.fa-facebook {
+            color: #3b5998; }
+          .footer ul li a .fab:hover.fa-instagram {
+            background: linear-gradient(225deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; }
+          .footer ul li a .fab:hover.fa-twitter {
+            color: #1da1f2; }
+    .footer ul span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background: white;
+      transition: 0.2s ease-in-out; }
+    .footer ul h4 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: white; }
+  .footer .wrapper-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 8rem; }
+    .footer .wrapper-left .copyright {
+      margin-top: 2rem;
+      padding: 1rem 2rem; }
+      .footer .wrapper-left .copyright p {
+        font-size: 1.4rem;
+        color: white; }
+  .footer .wrapper-right {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; }

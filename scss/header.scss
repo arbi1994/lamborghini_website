@@ -14,7 +14,6 @@ header {
     min-height: 10vh;
     background: $nav-color;
     @include flex();
-
     .logo {
       flex: 0 0 50rem;
       @include flex;

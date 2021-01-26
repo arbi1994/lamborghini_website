@@ -1,25 +1,36 @@
 .vehicles {
   min-height: 100vh;
+  margin: 3rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; }
+  .vehicles .next {
+    border: none;
+    padding: 1rem 3rem;
+    background: #b0b0dd;
+    font-size: 2rem;
+    cursor: pointer; }
   .vehicles .content {
     border: 1px solid black;
-    height: calc(100vh - 5rem);
     width: 80%;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     position: relative; }
     .vehicles .content .card {
-      height: 50rem;
+      margin: 3rem 2rem;
+      height: 40rem;
       width: 30rem;
       cursor: pointer;
-      overflow: hidden;
       border-radius: 1rem;
       animation: scaleDown 0.1s linear forwards;
+      overflow: hidden;
       position: relative; }
       .vehicles .content .card .description-window {
         position: absolute;
@@ -27,7 +38,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.7);
         z-index: 2;
         transition: 0.5s ease-in-out;
         color: white;
@@ -40,12 +51,15 @@
         justify-content: space-around; }
         .vehicles .content .card .description-window h1 {
           font-size: 3rem;
-          flex: 0.5; }
+          flex: 0.8; }
+        .vehicles .content .card .description-window h6 {
+          font-size: 1.4rem;
+          margin-bottom: 3rem; }
         .vehicles .content .card .description-window p {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           flex: 1; }
         .vehicles .content .card .description-window h2 {
-          flex: 1; }
+          flex: 0.5; }
           .vehicles .content .card .description-window h2 a {
             text-decoration: none;
             color: #ec9c00;
@@ -63,25 +77,28 @@
         animation: scaleUp 0.1s linear forwards; }
         .vehicles .content .card:hover .description-window {
           top: 0%; }
-    .vehicles .content .popup.active {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: black;
-      z-index: 3; }
-    .vehicles .content .popup.active::after {
-      content: "X";
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: black;
-      color: white;
-      font-size: 5rem;
-      padding: 1rem 2rem;
-      cursor: pointer;
-      z-index: 3; }
+  .vehicles .popup {
+    display: none; }
+  .vehicles .popup.active {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    z-index: 3; }
+  .vehicles .popup.active::after {
+    content: "X";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: black;
+    color: white;
+    font-size: 5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    z-index: 3; }
 
 @keyframes zoomIn {
   from {
