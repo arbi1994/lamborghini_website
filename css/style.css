@@ -161,10 +161,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 100;
   clip-path: circle(100%);
   animation: fadeOutCircle 0.5s ease forwards 3s; }
 
@@ -324,11 +324,29 @@ header {
 
 .vehicles {
   min-height: 100vh;
-  margin: 3rem 0;
+  margin-top: 3rem;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; }
+  .vehicles::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background: black; }
+  .vehicles::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background: black;
+    z-index: -1; }
   .vehicles .next {
     border: none;
     padding: 1rem 3rem;
@@ -336,9 +354,9 @@ header {
     font-size: 2rem;
     cursor: pointer; }
   .vehicles .content {
-    border: 1px solid black;
     width: 80%;
     padding: 1rem;
+    margin-bottom: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -346,23 +364,30 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    position: relative; }
+    position: relative;
+    z-index: 3; }
     .vehicles .content .card {
       margin: 3rem 2rem;
+      padding: 1rem;
       height: 40rem;
       width: 30rem;
       cursor: pointer;
       border-radius: 1rem;
       animation: scaleDown 0.1s linear forwards;
       overflow: hidden;
-      position: relative; }
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 10px 10px 10px #c5c5c5; }
       .vehicles .content .card .description-window {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.8);
         z-index: 2;
         transition: 0.5s ease-in-out;
         color: white;
@@ -394,9 +419,8 @@ header {
               color: #ffbf40;
               text-decoration: underline; }
       .vehicles .content .card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; }
+        max-width: 100%;
+        object-fit: scale-down; }
       .vehicles .content .card:hover {
         animation: scaleUp 0.1s linear forwards; }
         .vehicles .content .card:hover .description-window {
@@ -410,19 +434,37 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    background: black;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #999999;
+    overflow: hidden;
     z-index: 3; }
   .vehicles .popup.active::after {
     content: "X";
     position: absolute;
     top: 0;
     right: 0;
-    background: black;
-    color: white;
-    font-size: 5rem;
-    padding: 1rem 2rem;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: #fff;
+    background: #000000;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    opacity: 0.5;
+    padding: 1rem;
     cursor: pointer;
     z-index: 3; }
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fff; }
 
 @keyframes zoomIn {
   from {
@@ -480,7 +522,8 @@ header {
         .footer ul li a .fab {
           padding: 1rem;
           font-size: 20px;
-          color: white; }
+          color: white;
+          transition: all 0.5s ease; }
           .footer ul li a .fab:hover.fa-facebook {
             color: #3b5998; }
           .footer ul li a .fab:hover.fa-instagram {
@@ -489,6 +532,19 @@ header {
             -webkit-text-fill-color: transparent; }
           .footer ul li a .fab:hover.fa-twitter {
             color: #1da1f2; }
+          .footer ul li a .fab .fa-instagram::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, orangered, purple);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1; }
+            .footer ul li a .fab .fa-instagram::before:hover::before {
+              opacity: 1; }
     .footer ul span {
       position: absolute;
       bottom: 0;

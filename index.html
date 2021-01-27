@@ -17,7 +17,7 @@
     <title>Lamborghini website</title>
   </head>
   <body>
-    <!-- <div class="cover">
+    <div class="cover">
       <div class="logo">
         <svg
           id="bull"
@@ -56,8 +56,8 @@
           </g>
         </svg>
       </div>
-    </div> -->
-    <section class="home">
+    </div>
+    <section id="home" class="home">
       <header>
         <nav>
           <div class="logo">
@@ -79,21 +79,21 @@
             </div>
           </div>
           <ul>
-            <li><span></span><a href="#Home">Home</a></li>
+            <li><span></span><a href="#home">Home</a></li>
 
             <li class="history-dropdown">
               <span></span>
-              <a href="">History</a>
+              <a href="#history">History</a>
 
               <ul class="sub-menu">
-                <li><a href="">1916</a></li>
-                <li><a href="">1963</a></li>
-                <li><a href="">Logo</a></li>
-                <li><a href="">Future</a></li>
+                <li><a href="#1916">1916</a></li>
+                <li><a href="#1963">1963</a></li>
+                <li><a href="#logo">Logo</a></li>
+                <li><a href="#future">Future</a></li>
               </ul>
             </li>
 
-            <li><span></span><a href="">Vehicles</a></li>
+            <li><span></span><a href="#vehicle">Vehicles</a></li>
 
             <li><span></span><a href="">Contact</a></li>
 
@@ -145,7 +145,7 @@
         <div class="container">
           <img class="first" src="./images/350-gtv.png" alt="" />
           <img class="second" src="./images/ferruccio-lambo.png" alt="" />
-          <div class="description-col-1">
+          <div id="1916" class="description-col-1">
            
             <h3>Chapter 1</h3>
             <h1>1916</h1>
@@ -160,7 +160,7 @@
               heating systems, and grew rich.
             </p>
           </div>
-          <div class="description-col-2">
+          <div id="1963" class="description-col-2">
 
             <h3>Chapter 2</h3>
             <h1>1963</h1>
@@ -182,7 +182,7 @@
         <class class="container">
           <img class="second" src="./images/lambo_logo.png" alt="" />
           <img class="second" src="" alt="">
-          <div class="description-col-1">
+          <div id="logo" class="description-col-1">
             <h1>Logo</h1>
             <p>
               The company’s logo featured a bull, a reference to Ferruccio
@@ -194,7 +194,7 @@
               reputation for prestige and cutting-edge design.
             </p>
           </div>
-          <div class="description-col-2">
+          <div id="future" class="description-col-2">
             <h1>Future</h1>
             <p>
               In the early 1970s, Lamborghini’s tractor business experienced
@@ -210,7 +210,8 @@
         </div>
       </div>
     </section>
-    <section class="vehicles">
+    <section id="vehicle" class="vehicles">
+      <div class="circle"></div>
       <div class="content">
         <span class="popup"></span>
         
@@ -221,7 +222,7 @@
             <p>The rather controversial styling of this new Lamborghini stirred some emotions from both owners and enthusiasts all over the world</p>
             <h2><a href="">Check it out</a></h2>
           </div>
-          <img src="./images/pexels-tomas-anunziata-3876459.jpg" alt="">
+          <img src="./images/murcielago.png" alt="">
         </div>
 
         <div class="card">
@@ -231,7 +232,7 @@
             <p>The Gallardo is the best selling Lamborghini ever. It was powerful, dynamic and a true Lamborghini in every way</p>
             <h2><a href="">Check it out</a></h2>
           </div>
-          <img src="./images/pexels-tomas-anunziata-3876459.jpg" alt="">
+          <img src="./images/gallardo.png" alt="">
         </div>
 
         <div class="card">
@@ -241,7 +242,7 @@
             <p>Nobody does supercars like Lamborghini. The Aventador was more of his ancestors but, was different in one meaningful way</p>
             <h2><a href="">Check it out</a></h2>
           </div>
-          <img src="./images/pexels-tomas-anunziata-3876459.jpg" alt="">
+          <img src="./images/aventador.png" alt="">
         </div>
 
         <div class="card">
@@ -251,7 +252,7 @@
             <p>The Lamborghini Huracán is the perfect modern supercar. It looks futuristic and stands out in any crowd</p>
             <h2><a href="">Check it out</a></h2>
           </div>
-          <img src="./images/pexels-tomas-anunziata-3876459.jpg" alt="">
+          <img src="./images/huracan.png" alt="">
         </div>
 
         <div class="card">
@@ -262,7 +263,7 @@
                that they are part of what Lamborghini calls the “Few-Off” initiative</p>
             <h2><a href="">Check it out</a></h2>
           </div>
-          <img src="./images/pexels-tomas-anunziata-3876459.jpg" alt="">
+          <img src="./images//special_edition.png" alt="">
         </div>
 
         <div class="card">
@@ -273,7 +274,7 @@
                showcasing technology and designs that we dream of seeing on future production models</p>
             <h2><a href="">Check it out</a></h2>
           </div>
-          <img src="./images/pexels-tomas-anunziata-3876459.jpg" alt="">
+          <img src="./images/concept_cars.png" alt="">
         </div>
 
         <div class="card">
@@ -285,7 +286,7 @@
             </p>
             <h2><a href="">Check it out</a></h2>
           </div>
-          <img src="./images/pexels-tomas-anunziata-3876459.jpg" alt="">
+          <img src="./images/race_cars.png" alt="">
         </div>
 
       </div>
@@ -295,9 +296,9 @@
       <div class="footer-wrapper">
         <div class="wrapper-left">
           <ul>
-            <li><span></span><a href="">Home</a></li>
-            <li><span></span><a href="">History</a></li>
-            <li><span></span><a href="">Vechicles</a></li>
+            <li><span></span><a href="#home">Home</a></li>
+            <li><span></span><a href="#history">History</a></li>
+            <li><span></span><a href="#vehicles">Vechicles</a></li>
             <li><span></span><a href="">Contact</a></li>
           </ul>
           <div class="copyright">

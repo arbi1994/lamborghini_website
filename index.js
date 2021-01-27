@@ -41,6 +41,23 @@ checkLink.forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     popupWindow(popup);
+
+    if(link == checkLink[0]){
+      previewUrl("https://en.wikipedia.org/wiki/Lamborghini_Murciélago", popup);
+    }else if(link == checkLink[1]){
+      previewUrl("https://en.wikipedia.org/wiki/Lamborghini_Gallardo", popup);
+    }else if(link == checkLink[2]){
+      previewUrl("https://en.wikipedia.org/wiki/Lamborghini_Aventador", popup);
+    }else if(link == checkLink[3]){
+      previewUrl("https://en.wikipedia.org/wiki/Lamborghini_Huracán", popup);
+    }else if(link == checkLink[4]){
+      previewUrl("https://www.hotcars.com/15-of-the-sickest-limited-edition-lamborghinis", popup);
+    }else if(link == checkLink[5]){
+      previewUrl("https://en.wikipedia.org/wiki/List_of_Lamborghini_concept_vehicles", popup);
+    }else if(link == checkLink[6]){
+      previewUrl("", popup);
+    }
+    
   });
 });
 
@@ -60,3 +77,14 @@ function popupWindow(window){
 function pupupWindowClose(window){
   window.classList.remove("active");
 }
+
+//function to redirect to an external web page 
+function previewUrl(url,target){
+
+  window.ht = setTimeout(function(){
+      let div = document.querySelector('.popup')
+      div.innerHTML = '<iframe width="100%" height="100%" frameborder="0" src="' + url + '" />';
+  }, 1000);      
+} 
+
+

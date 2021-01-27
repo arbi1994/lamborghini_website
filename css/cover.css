@@ -5,10 +5,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 100;
   clip-path: circle(100%);
   animation: fadeOutCircle 0.5s ease forwards 3s; }
 
