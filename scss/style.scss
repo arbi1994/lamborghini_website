@@ -18,10 +18,16 @@ Global styling
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  body {
-    overflow-x: hidden;
-    font-family: "Open Sans", sans-serif;
-  }
+}
+
+
+body {
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  scroll-padding-top: 5rem;
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+ 
 }
 
 html {

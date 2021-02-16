@@ -9,16 +9,8 @@
   min-height: 100vh;
   margin-top: 3rem;
   position: relative;
+  scroll-snap-align: start;
   @include flex();
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 50%;
-    background: black;
-  }
   &::after {
     content: "";
     position: absolute;

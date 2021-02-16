@@ -87,4 +87,38 @@ function previewUrl(url,target){
   }, 1000);      
 } 
 
+//history page --- animation on scroll 
+gsap.registerPlugin(ScrollTrigger);
+
+const images = document.querySelectorAll("img")
+
+function animationOnScroll(){
+  images.forEach(image => {
+    const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: image,
+      start: "top 500px",
+      end: "bottom top",
+      //scrub: true,
+      markers: false
+    }
+  })
+
+    if(image.id == "first_img"){
+      tl.to(image, {xPercent: -120, duration: 1})
+    }else if(image.id == "second_img"){
+      tl.to(image, {xPercent: 80, duration: 1})
+    }else if(image.id == "third_img"){
+      tl.to(image, {xPercent: -250, duration: 1})
+    }
+
+  })
+}
+
+animationOnScroll();
+
+
+
+
+
 
