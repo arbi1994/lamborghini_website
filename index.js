@@ -118,4 +118,26 @@ function animationOnScroll(){
 animationOnScroll();
 
 
+/* Burger animation */
+
+const line_1 = document.querySelector(".line1");
+const line_2 = document.querySelector(".line2");
+const line_3 = document.querySelector(".line3");
+
+const menu = document.querySelector("nav ul")
+const body = document.querySelector("body")
+
+const burger = document.querySelector(".burger-menu");
+burger.addEventListener("click", () => {
+    line_1.classList.toggle("active")
+    line_2.classList.toggle("active")
+    line_3.classList.toggle("active")
+
+    menu.classList.toggle("active")
+
+    if(menu.classList == "active"){
+      body.style.overflow = "hidden"
+    }
+})
+
 

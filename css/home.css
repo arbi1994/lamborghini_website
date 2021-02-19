@@ -45,6 +45,20 @@
     right: 5%; } }
 
 /* Variables */
+/* flex function */
+/* burger lines animation */
+@keyframes firstLine {
+  to {
+    transform: translateY(1.5rem) rotateZ(45deg); } }
+
+@keyframes secondLine {
+  to {
+    opacity: 0; } }
+
+@keyframes thirdLine {
+  to {
+    transform: translateY(-1.5rem) rotateZ(-45deg); } }
+
 header {
   background: black;
   padding: 2rem 5rem; }
@@ -53,27 +67,87 @@ header {
     background: black;
     display: flex;
     justify-content: space-around;
-    align-items: center; }
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative; }
+    @media (max-width: 1100px) {
+      header nav .burger-menu {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 5rem;
+        height: 3.5rem;
+        z-index: 2;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between; }
+        header nav .burger-menu span {
+          display: block;
+          width: 100%;
+          height: 3px;
+          background: white; }
+        header nav .burger-menu .line1.active {
+          animation: firstLine 0.5s ease forwards; }
+        header nav .burger-menu .line2.active {
+          animation: secondLine 0.5s ease forwards; }
+        header nav .burger-menu .line3.active {
+          animation: thirdLine 0.5s ease forwards; } }
     header nav .logo {
       flex: 0 0 50rem;
       display: flex;
       justify-content: space-around;
       align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between; }
+      header nav .logo .logo-name svg path {
+        fill: white; }
+      @media (max-width: 1100px) {
+        header nav .logo {
+          flex: 1 0 50rem;
+          justify-content: flex-start; } }
+
+@media (max-width: 768px) and (min-width: 320px) {
+  header nav .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-65%, -50%); } }
       header nav .logo .logo-img {
         transform: translateX(-50%);
         animation: breatheEffect 3s ease-in-out alternate infinite 3s;
-        z-index: 1; }
+        z-index: 1;
+        max-width: 80px;
+        height: 80px; }
+        @media (max-width: 1100px) {
+          header nav .logo .logo-img {
+            width: 50px;
+            height: 50px;
+            transform: translateX(calc(100vw / 6)); } }
+
+@media (max-width: 768px) and (min-width: 320px) {
+  header nav .logo .logo-img {
+    display: none; } }
         header nav .logo .logo-img img {
           object-fit: contain;
-          width: 80px;
-          height: 80px; }
+          width: 100%;
+          height: auto; }
     header nav ul {
       list-style: none;
       flex: 0 0 50rem;
       display: flex;
       justify-content: space-around;
-      align-items: center; }
+      align-items: center;
+      flex-wrap: wrap; }
+      @media (max-width: 1100px) {
+        header nav ul {
+          display: none;
+          transition: all 0.5s ease; } }
       header nav ul li {
         position: relative;
         border-bottom: 1px solid rgba(255, 255, 255, 0); }
@@ -83,6 +157,10 @@ header {
           text-decoration: none;
           color: white;
           font-size: 1.8rem; }
+          @media (max-width: 1100px) {
+            header nav ul li a {
+              font-size: 3rem;
+              letter-spacing: 0.5rem; } }
       header nav ul span {
         position: absolute;
         bottom: 0;
@@ -91,6 +169,19 @@ header {
         height: 1px;
         background: white;
         transition: 0.2s ease-in-out; }
+    header nav ul.active {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: grey;
+      z-index: 2;
+      flex-direction: column; }
 
 .history-dropdown .sub-menu {
   text-align: center;
@@ -99,6 +190,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
   position: absolute;

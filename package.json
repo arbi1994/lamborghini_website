@@ -17,6 +17,7 @@
     "browser-sync": "^2.26.13",
     "cssnano": "^4.1.10",
     "gulp-postcss": "^9.0.0",
-    "gulp-terser": "^2.0.0"
+    "gulp-terser": "^2.0.0",
+    "include-media": "^1.4.9"
   }
 }
