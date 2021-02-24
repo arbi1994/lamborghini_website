@@ -123,6 +123,7 @@ animationOnScroll();
 const line_1 = document.querySelector(".line1");
 const line_2 = document.querySelector(".line2");
 const line_3 = document.querySelector(".line3");
+const lines = document.querySelectorAll(".burger-menu span")
 
 const menu = document.querySelector("nav ul")
 const body = document.querySelector("body")
@@ -132,9 +133,9 @@ const navLinks = document.querySelectorAll(".nav-links li")
 const burger = document.querySelector(".burger-menu");
 burger.addEventListener("click", () => {
     //animate burger icon
-    line_1.classList.toggle("active")
-    line_2.classList.toggle("active")
-    line_3.classList.toggle("active")
+    lines.forEach(line => {
+      line.classList.toggle("active")
+    })
     //open menu
     menu.classList.toggle("active")
 
@@ -142,9 +143,9 @@ burger.addEventListener("click", () => {
     navLinks.forEach(link => {
       link.addEventListener("click", (e) => {
         //set burger icon to previous state
-        line_1.classList.remove("active")
-        line_2.classList.remove("active")
-        line_3.classList.remove("active")
+        lines.forEach(line => {
+          line.classList.remove("active")
+        })
         //close menu
         menu.classList.remove("active")
       })
