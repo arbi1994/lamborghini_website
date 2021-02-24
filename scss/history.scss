@@ -1,3 +1,5 @@
+@import "../dist/include-media";
+
 @mixin flex {
   display: flex;
   justify-content: center;
@@ -11,6 +13,11 @@
   .first-paragraph {
     min-height: 100vh;
     position: relative;
+    @include media("<=1100px"){
+      img{
+        display: none;
+      }
+    }
     .title {
       font-size: 4rem;
       color: black;
@@ -27,12 +34,20 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 1fr 0.5fr 1fr;
       position: relative;
+      @include media("<=1100px"){
+        @include flex();  
+      }
       .description-col-1 {
         grid-column: 1/2;
         grid-row: 1/2;
         align-self: start;
         margin-left: 10rem;
-
+        @include media("<=1100px"){
+          margin-left: 0;
+          h3{
+            display: none;
+          }
+        }
         h3 {
           float: left;
           font-size: 1.8rem;
@@ -45,6 +60,10 @@
           letter-spacing: 0.1rem;
           text-align: right;
           position: relative;
+          @include media("<=1100px"){
+            text-align: center;
+            font-size: 4rem;
+          }
           &:after {
             content: "";
             width: 15rem;
@@ -53,6 +72,9 @@
             position: absolute;
             bottom: 5%;
             right: 0;
+            @include media("<=1100px"){
+              display: none;
+            }
           }
         }
 
@@ -69,7 +91,12 @@
         grid-row: 3/4;
         align-self: end;
         margin-right: 10rem;
-
+        @include media("<=1100px"){
+          margin-right: 0;
+          h3{
+            display: none;
+          }
+        }
         h3 {
           float: right;
           font-size: 1.8rem;
@@ -82,6 +109,10 @@
           letter-spacing: 0.1rem;
           text-align: left;
           position: relative;
+          @include media("<=1100px"){
+            text-align: center;
+            font-size: 4rem;
+          }
           &:after {
             content: "";
             width: 15rem;
@@ -90,6 +121,9 @@
             position: absolute;
             bottom: 0;
             left: 0;
+            @include media("<=1100px"){
+              display: none;
+            }
           }
         }
 

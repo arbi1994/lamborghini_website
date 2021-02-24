@@ -4,6 +4,9 @@
   .history .first-paragraph {
     min-height: 100vh;
     position: relative; }
+    @media (max-width: 1100px) {
+      .history .first-paragraph img {
+        display: none; } }
     .history .first-paragraph .title {
       font-size: 4rem;
       color: black;
@@ -19,11 +22,22 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 1fr 0.5fr 1fr;
       position: relative; }
+      @media (max-width: 1100px) {
+        .history .first-paragraph .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column; } }
       .history .first-paragraph .container .description-col-1 {
         grid-column: 1/2;
         grid-row: 1/2;
         align-self: start;
         margin-left: 10rem; }
+        @media (max-width: 1100px) {
+          .history .first-paragraph .container .description-col-1 {
+            margin-left: 0; }
+            .history .first-paragraph .container .description-col-1 h3 {
+              display: none; } }
         .history .first-paragraph .container .description-col-1 h3 {
           float: left;
           font-size: 1.8rem;
@@ -35,6 +49,10 @@
           letter-spacing: 0.1rem;
           text-align: right;
           position: relative; }
+          @media (max-width: 1100px) {
+            .history .first-paragraph .container .description-col-1 h1 {
+              text-align: center;
+              font-size: 4rem; } }
           .history .first-paragraph .container .description-col-1 h1:after {
             content: "";
             width: 15rem;
@@ -43,6 +61,9 @@
             position: absolute;
             bottom: 5%;
             right: 0; }
+            @media (max-width: 1100px) {
+              .history .first-paragraph .container .description-col-1 h1:after {
+                display: none; } }
         .history .first-paragraph .container .description-col-1 p {
           font-size: 1.4rem;
           word-spacing: 0.2rem;
@@ -54,6 +75,11 @@
         grid-row: 3/4;
         align-self: end;
         margin-right: 10rem; }
+        @media (max-width: 1100px) {
+          .history .first-paragraph .container .description-col-2 {
+            margin-right: 0; }
+            .history .first-paragraph .container .description-col-2 h3 {
+              display: none; } }
         .history .first-paragraph .container .description-col-2 h3 {
           float: right;
           font-size: 1.8rem;
@@ -65,6 +91,10 @@
           letter-spacing: 0.1rem;
           text-align: left;
           position: relative; }
+          @media (max-width: 1100px) {
+            .history .first-paragraph .container .description-col-2 h1 {
+              text-align: center;
+              font-size: 4rem; } }
           .history .first-paragraph .container .description-col-2 h1:after {
             content: "";
             width: 15rem;
@@ -73,6 +103,9 @@
             position: absolute;
             bottom: 0;
             left: 0; }
+            @media (max-width: 1100px) {
+              .history .first-paragraph .container .description-col-2 h1:after {
+                display: none; } }
         .history .first-paragraph .container .description-col-2 p {
           font-size: 1.4rem;
           word-spacing: 0.2rem;

@@ -16,6 +16,9 @@
     height: 50%;
     background: black;
     z-index: -1; }
+    @media (max-width: 1100px) {
+      .vehicles::after {
+        display: none; } }
   .vehicles .next {
     border: none;
     padding: 1rem 3rem;

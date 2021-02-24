@@ -1,3 +1,5 @@
+@import "../dist/include-media";
+
 @mixin flex {
   display: flex;
   justify-content: center;
@@ -20,6 +22,9 @@
     height: 50%;
     background: black;
     z-index: -1;
+    @include media("<=1100px"){
+      display: none;
+    }
   }
 
   .next {
