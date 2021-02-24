@@ -32,7 +32,8 @@ $nav-color: black;
 header {
   background: $nav-color;
   padding: 2rem 5rem;
-  @include media("<=tablet", ">=phone") {
+  @include media("<=1100px") {
+    padding: 2rem;
   }
   nav {
     min-height: 10vh;
@@ -72,7 +73,13 @@ header {
     }
     .logo {
       flex: 0 0 50rem;
+      @include media("<=1100px") {
+        flex: 1 0 0 !important;
+      }
       .logo-name {
+        @include media("<=1100px") {
+          width: 50%;
+        }
         svg {
           path {
             fill: white;
@@ -87,12 +94,6 @@ header {
         flex: 1 0 50rem;
         justify-content: flex-start;
       }
-      @include media("<=tablet", ">=phone") {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-65%, -50%);
-      }
 
       .logo-img {
         transform: translateX(-50%);
@@ -102,9 +103,7 @@ header {
         height: 80px;
 
         @include media("<=1100px") {
-          width: 50px;
-          height: 50px;
-          transform: translateX(calc(100vw / 6));
+          display: none;
         }
         @include media("<=tablet", ">=phone") {
           display: none;
