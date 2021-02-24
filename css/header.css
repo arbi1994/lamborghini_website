@@ -131,8 +131,6 @@ header {
       align-items: center;
       flex-wrap: wrap;
       position: fixed;
-      overflow-y: scroll;
-      overscroll-behavior: contain;
       top: 0;
       right: 0;
       bottom: 0;
