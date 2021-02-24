@@ -50,12 +50,11 @@ header {
         height: 3.5rem;
         z-index: 2;
         cursor: pointer;
-        //border: 1px solid white;
         @include flex();
         flex-direction: column;
         justify-content: space-between;
         span {
-          display: block;
+          display: inline-block;
           width: 100%;
           height: 3px;
           background: white;
@@ -80,6 +79,7 @@ header {
           }
         }
       }
+
       @include flex;
       justify-content: space-between;
 
@@ -125,6 +125,12 @@ header {
       @include media("<=1100px") {
         display: none;
         transition: all 0.5s ease;
+        .history-dropdown{
+           .sub-menu{
+            display: none;
+          }
+        }
+       
       }
       li {
         position: relative;
@@ -154,11 +160,15 @@ header {
     }
     ul.active{
       @include flex();
-      position: fixed;
-      top: 0;
+      position: fixed; 
+      overflow-y: scroll;
+      overscroll-behavior: contain;
+      top: 0; 
+      right: 0; 
+      bottom: 0; 
       left: 0;
-      height: 100%;
-      width: 100%;
+      // height: 100%;
+      // width: 100%;
       background: grey;
       z-index: 2;
       flex-direction: column;

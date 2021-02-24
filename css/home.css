@@ -88,7 +88,7 @@ header {
         flex-direction: column;
         justify-content: space-between; }
         header nav .burger-menu span {
-          display: block;
+          display: inline-block;
           width: 100%;
           height: 3px;
           background: white; }
@@ -147,7 +147,9 @@ header {
       @media (max-width: 1100px) {
         header nav ul {
           display: none;
-          transition: all 0.5s ease; } }
+          transition: all 0.5s ease; }
+          header nav ul .history-dropdown .sub-menu {
+            display: none; } }
       header nav ul li {
         position: relative;
         border-bottom: 1px solid rgba(255, 255, 255, 0); }
@@ -175,10 +177,12 @@ header {
       align-items: center;
       flex-wrap: wrap;
       position: fixed;
+      overflow-y: scroll;
+      overscroll-behavior: contain;
       top: 0;
+      right: 0;
+      bottom: 0;
       left: 0;
-      height: 100%;
-      width: 100%;
       background: grey;
       z-index: 2;
       flex-direction: column; }
