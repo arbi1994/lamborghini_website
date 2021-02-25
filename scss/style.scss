@@ -27,11 +27,27 @@ body {
   scroll-padding-top: 5rem;
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
- position: relative;
+  position: relative;
+}
+
+.backToTop.active{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: rgb(216, 186, 18);
+  border: none;
+  cursor: pointer;
+  &::after{
+    content: "TOP";
+  }
 }
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 /* Imports */

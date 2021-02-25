@@ -18,8 +18,22 @@ body {
   font-family: "Open Sans", sans-serif;
   position: relative; }
 
+.backToTop.active {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: #d8ba12;
+  border: none;
+  cursor: pointer; }
+  .backToTop.active::after {
+    content: "TOP"; }
+
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 /* Imports */
 .swiper-container {

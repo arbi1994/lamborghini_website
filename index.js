@@ -152,4 +152,22 @@ burger.addEventListener("click", () => {
     })
 })
 
+//add back to top button
+const button = document.createElement("button")
+button.className = "backToTop"
+body.appendChild(button)
+
+window.addEventListener("scroll", () => {
+  if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+    button.classList.add("active")
+  }else{
+    button.classList.remove("active")
+  }
+})
+
+button.addEventListener("click", () => {
+  document.documentElement.scrollTop = 0;
+})
+
+
 
