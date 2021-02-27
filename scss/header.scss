@@ -14,7 +14,7 @@ $nav-color: black;
 /* burger lines animation */
 @keyframes firstLine {
   to {
-    transform: translateY(1.5rem) rotateZ(45deg);
+    transform: translateY(1.2rem) rotateZ(45deg);
   }
 }
 @keyframes secondLine {
@@ -28,10 +28,15 @@ $nav-color: black;
   }
 }
 
-
 header {
   background: $nav-color;
   padding: 2rem 5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  z-index: 2;
+  transition: opacity 0.3s ease;
   @include media("<=1100px") {
     padding: 2rem;
   }
@@ -42,13 +47,14 @@ header {
     position: relative;
     @include media("<=1100px") {
       .burger-menu {
+        border: 0px solid white;
         position: absolute;
         top: 50%;
         right: 0;
         transform: translate(-50%, -50%);
         display: block;
-        width: 5rem;
-        height: 3.5rem;
+        width: 4rem;
+        height: 3rem;
         z-index: 2;
         cursor: pointer;
         @include flex();
@@ -72,13 +78,13 @@ header {
       }
     }
     .logo {
-      flex: 0 0 50rem;
+      flex: 1 0 50rem;
       @include media("<=1100px") {
         flex: 1 0 0 !important;
       }
       .logo-name {
         @include media("<=1100px") {
-          width: 50%;
+          width: 40%;
         }
         svg {
           path {
@@ -100,7 +106,7 @@ header {
         animation: breatheEffect 3s ease-in-out alternate infinite 3s;
         z-index: 1;
         max-width: 80px;
-        height: 80px;
+        height: 90px;
 
         @include media("<=1100px") {
           display: none;

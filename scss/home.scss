@@ -1,7 +1,7 @@
 @import "../dist/include-media";
 
 .swiper-container {
-  height: calc(100vh - 16.5vh);
+  height: 100vh;
   .swiper-wrapper {
     .swiper-slide {
       display: flex;
@@ -11,13 +11,13 @@
         object-fit: cover;
       }
       h2 {
-        font-size: 5rem;
+        font-size: 6rem;
         font-weight: bold;
         color: rgb(255, 255, 255);
         text-transform: uppercase;
         letter-spacing: 0.3rem;
         position: absolute;
-        top: 5%;
+        top: 20%;
         right: -100%;
         animation: toLeft 1s cubic-bezier(0.23, 1, 0.32, 1) forwards 4s;
         @include media("<=1100px") {
@@ -43,7 +43,7 @@
     line-height: 20px;
     color: transparent;
     opacity: 1;
-    background: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 0px;
     padding: 2px 0 !important;
   }
@@ -57,7 +57,7 @@
 
 @keyframes toLeft {
   to {
-    right: 5%;
+    right: 3%;
   }
 }
 

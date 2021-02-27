@@ -1,5 +1,5 @@
 .swiper-container {
-  height: calc(100vh - 16.5vh); }
+  height: 100vh; }
   .swiper-container .swiper-wrapper .swiper-slide {
     display: flex;
     justify-content: center; }
@@ -7,13 +7,13 @@
       width: 100%;
       object-fit: cover; }
     .swiper-container .swiper-wrapper .swiper-slide h2 {
-      font-size: 5rem;
+      font-size: 6rem;
       font-weight: bold;
       color: white;
       text-transform: uppercase;
       letter-spacing: 0.3rem;
       position: absolute;
-      top: 5%;
+      top: 20%;
       right: -100%;
       animation: toLeft 1s cubic-bezier(0.23, 1, 0.32, 1) forwards 4s; }
       @media (max-width: 1100px) {
@@ -46,14 +46,14 @@
 
 @keyframes toLeft {
   to {
-    right: 5%; } }
+    right: 3%; } }
 
 /* Variables */
 /* flex function */
 /* burger lines animation */
 @keyframes firstLine {
   to {
-    transform: translateY(1.5rem) rotateZ(45deg); } }
+    transform: translateY(1.2rem) rotateZ(45deg); } }
 
 @keyframes secondLine {
   to {
@@ -65,7 +65,13 @@
 
 header {
   background: black;
-  padding: 2rem 5rem; }
+  padding: 2rem 5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  z-index: 2;
+  transition: opacity 0.3s ease; }
   @media (max-width: 1100px) {
     header {
       padding: 2rem; } }
@@ -79,13 +85,14 @@ header {
     position: relative; }
     @media (max-width: 1100px) {
       header nav .burger-menu {
+        border: 0px solid white;
         position: absolute;
         top: 50%;
         right: 0;
         transform: translate(-50%, -50%);
         display: block;
-        width: 5rem;
-        height: 3.5rem;
+        width: 4rem;
+        height: 3rem;
         z-index: 2;
         cursor: pointer;
         display: flex;
@@ -106,7 +113,7 @@ header {
         header nav .burger-menu .line3.active {
           animation: thirdLine 0.5s ease forwards; } }
     header nav .logo {
-      flex: 0 0 50rem;
+      flex: 1 0 50rem;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -117,7 +124,7 @@ header {
           flex: 1 0 0 !important; } }
       @media (max-width: 1100px) {
         header nav .logo .logo-name {
-          width: 50%; } }
+          width: 40%; } }
       header nav .logo .logo-name svg path {
         fill: white; }
       @media (max-width: 1100px) {
@@ -129,7 +136,7 @@ header {
         animation: breatheEffect 3s ease-in-out alternate infinite 3s;
         z-index: 1;
         max-width: 80px;
-        height: 80px; }
+        height: 90px; }
         @media (max-width: 1100px) {
           header nav .logo .logo-img {
             display: none; } }

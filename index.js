@@ -160,6 +160,7 @@ body.appendChild(button)
 window.addEventListener("scroll", () => {
   if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
     button.classList.add("active")
+    button.style.transition = "background-color 0.5s ease"
   }else{
     button.classList.remove("active")
   }
@@ -169,5 +170,21 @@ button.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 })
 
+//show/hide nav bar when scrolling
+const navBar = document.querySelector("header")
+let prevScrollPos = window.pageYOffset
+
+window.addEventListener("scroll", () => {
+  let currScrollPos = window.pageYOffset
+
+  if(prevScrollPos > currScrollPos){
+    //navBar.style.top = "0"
+    navBar.style.opacity = "1"
+  }else{
+    //navBar.style.top = "-150px"
+    navBar.style.opacity = "0"
+  }
+  prevScrollPos = currScrollPos
+})
 
 
